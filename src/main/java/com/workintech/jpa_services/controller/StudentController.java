@@ -46,7 +46,7 @@ public class StudentController {
         return studentService.searchByGender(gender);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/find/{id}")
     public StudentResponseRecord findById(@Positive @PathVariable long id){
         Student student = studentService.findById(id);
         return new StudentResponseRecord(student.getFirstName(),student.getLastName());
